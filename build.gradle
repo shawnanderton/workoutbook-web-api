@@ -1,8 +1,19 @@
-plugins {
-    id 'java'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.2.2.RELEASE'
+    }
 }
 
-group 'org.example'
+plugins {
+    id 'java'
+    id 'scala'
+    id 'org.springframework.boot' version '2.2.2.RELEASE'
+}
+
+group 'com.workoutbook'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -12,5 +23,7 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.2.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-rest', version: '2.2.2.RELEASE'
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.13.1'
 }
